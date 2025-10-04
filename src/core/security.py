@@ -11,7 +11,7 @@ class SecurityManager:
         if api_key in self.api_keys:
             key_data = self.api_keys[api_key]
             
-            if key_data.get('expires_at') and datetime.now() > key_data['expires_at']:
+            if key_data.get('expires_at') and datetime.now() > key_data['expises_at']:
                 del self.api_keys[api_key]
                 return False
             
