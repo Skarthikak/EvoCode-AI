@@ -1,0 +1,67 @@
+{
+  "name": "evocode-ai",
+  "displayName": "EvoCode AI",
+  "description": "Self-evolving AI coding assistant for VS Code",
+  "version": "0.1.0",
+  "publisher": "EvoCodeAI",
+  "engines": {
+    "vscode": "^1.74.0"
+  },
+  "categories": [
+    "Other",
+    "Programming Languages",
+    "Machine Learning"
+  ],
+  "activationEvents": [
+    "onStartupFinished"
+  ],
+  "main": "./out/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "evocode.startSession",
+        "title": "EvoCode: Start Collaboration Session"
+      },
+      {
+        "command": "evocode.suggestEvolution",
+        "title": "EvoCode: Suggest Feature Evolution"
+      },
+      {
+        "command": "evocode.viewMetrics",
+        "title": "EvoCode: View AI Metrics"
+      }
+    ],
+    "configuration": {
+      "title": "EvoCode AI",
+      "properties": {
+        "evocode.enableAI": {
+          "type": "boolean",
+          "default": true,
+          "description": "Enable AI code completion"
+        },
+        "evocode.learningEnabled": {
+          "type": "boolean",
+          "default": true,
+          "description": "Allow EvoCode to learn from your coding patterns"
+        },
+        "evocode.collaborationEnabled": {
+          "type": "boolean",
+          "default": true,
+          "description": "Enable real-time collaboration features"
+        }
+      }
+    }
+  },
+  "scripts": {
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "package": "vsce package"
+  },
+  "devDependencies": {
+    "@types/vscode": "^1.74.0",
+    "typescript": "^4.9.4"
+  },
+  "dependencies": {
+    "axios": "^1.3.0"
+  }
+}
