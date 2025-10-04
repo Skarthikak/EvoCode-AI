@@ -1,0 +1,15 @@
+{
+  "name": "evocode-ai",
+  "version": "1.0.0",
+  "description": "Self-evolving development environment",
+  "main": "src/core/evo_assistant.py",
+  "scripts": {
+    "start": "python src/core/evo_assistant.py",
+    "evolve": "python src/core/evolution_engine.py",
+    "test": "python -m pytest tests/",
+    "deploy": "gh-pages -d docs"
+  },
+  "keywords": ["ai", "code-assistant", "self-evolving", "github"],
+  "author": "EvoCode AI Community",
+  "license": "MIT"
+}
