@@ -36,7 +36,7 @@ class MLTrainingPipeline:
         
         # Simulate training process
         for i in range(1, 101):
-            time.sleep(0.1)  # Simulate work
+            time.sleep(0.1)
             job["progress"] = i
             
             if i % 20 == 0:
@@ -46,7 +46,6 @@ class MLTrainingPipeline:
         job["completed_at"] = datetime.now().isoformat()
         job["results"] = self.generate_training_results(job)
         
-        # Create new model version
         new_model = self.create_model_version(job)
         self.model_versions.append(new_model)
         
@@ -68,7 +67,6 @@ class MLTrainingPipeline:
             "learning_rate": 0.001 * (100 - progress) / 100
         }
         
-        # In real implementation, this would update the job metrics
         return metrics
     
     def generate_training_results(self, job):
@@ -104,7 +102,6 @@ class MLTrainingPipeline:
         model["status"] = "deploying"
         model["rollout_percentage"] = percentage
         
-        # Simulate deployment
         time.sleep(2)
         
         model["status"] = "active"

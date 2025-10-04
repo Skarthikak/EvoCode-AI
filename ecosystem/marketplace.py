@@ -61,42 +61,6 @@ class CommunityMarketplace:
         
         return None
     
-    def add_review(self, plugin_id, review_data):
-        plugin = self.get_plugin(plugin_id)
-        if plugin:
-            review = {
-                "user": review_data["user"],
-                "rating": review_data["rating"],
-                "comment": review_data.get("comment", ""),
-                "timestamp": datetime.now().isoformat()
-            }
-            
-            plugin["reviews"].append(review)
-            
-            # Update average rating
-            if plugin["reviews"]:
-                total_rating = sum(r["rating"] for r in plugin["reviews"])
-                plugin["rating"] = total_rating / len(plugin["reviews"])
-            
-            return review
-        
-        return None
-    
-    def submit_theme(self, theme_data):
-        theme = {
-            "id": f"theme_{len(self.themes) + 1}",
-            "name": theme_data["name"],
-            "developer": theme_data["developer"],
-            "description": theme_data["description"],
-            "price": theme_data.get("price", 0),
-            "downloads": 0,
-            "status": "pending",
-            "submitted_at": datetime.now().isoformat()
-        }
-        
-        self.themes.append(theme)
-        return theme
-    
     def get_marketplace_stats(self):
         total_plugins = len(self.plugins)
         approved_plugins = len([p for p in self.plugins if p["status"] == "approved"])
@@ -123,53 +87,5 @@ class CommunityMarketplace:
             return "emerging"
         else:
             return "developing"
-    
-    def generate_marketplace_report(self):
-        stats = self.get_marketplace_stats()
-        
-        report = {
-            "marketplace_overview": stats,
-            "top_plugins": sorted(self.plugins, key=lambda x: x["downloads"], reverse=True)[:5],
-            "recent_submissions": self.plugins[-5:] if self.plugins else [],
-            "revenue_analytics": self.get_revenue_analytics(),
-            "growth_recommendations": self.generate_growth_recommendations(stats)
-        }
-        
-        with open('marketplace_report.json', 'w') as f:
-            json.dump(report, f, indent=2)
-        
-        return report
-    
-    def get_revenue_analytics(self):
-        paid_plugins = [p for p in self.plugins if p["price"] > 0]
-        free_plugins = [p for p in self.plugins if p["price"] == 0]
-        
-        return {
-            "total_paid_plugins": len(paid_plugins),
-            "total_free_plugins": len(free_plugins),
-            "conversion_rate": len(paid_plugins) / len(self.plugins) if self.plugins else 0,
-            "average_price": sum(p["price"] for p in paid_plugins) / len(paid_plugins) if paid_plugins else 0
-        }
-    
-    def generate_growth_recommendations(self, stats):
-        recommendations = []
-        
-        if stats["total_plugins"] < 10:
-            recommendations.append("Launch developer incentive program")
-        
-        if stats["total_downloads"] < 50:
-            recommendations.append("Promote marketplace to community")
-        
-        if stats["active_developers"] < 5:
-            recommendations.append("Create developer documentation and SDK")
-        
-        recommendations.extend([
-            "Implement plugin categories and tags",
-            "Add plugin versioning and update system",
-            "Create featured plugins section",
-            "Add social sharing for plugins"
-        ])
-        
-        return recommendations
 
 marketplace = CommunityMarketplace()

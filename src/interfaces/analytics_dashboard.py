@@ -67,7 +67,6 @@ class AnalyticsDashboard:
         }
     
     def calculate_active_users(self):
-        # Simulate active user calculation
         return 1247
     
     def calculate_new_users(self):
