@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import json
 from datetime import datetime
 
@@ -7,11 +8,17 @@ class CommunityMarketplace:
         self.themes = []
         self.templates = []
         self.transactions = []
+=======
+class CommunityMarketplace:
+    def __init__(self):
+        self.plugins = []
+>>>>>>> db7bc0e26d01433233b05f14b13fb73dbca52f97
     
     def submit_plugin(self, plugin_data):
         plugin = {
             "id": f"plugin_{len(self.plugins) + 1}",
             "name": plugin_data["name"],
+<<<<<<< HEAD
             "developer": plugin_data["developer"],
             "description": plugin_data["description"],
             "category": plugin_data.get("category", "utility"),
@@ -87,5 +94,11 @@ class CommunityMarketplace:
             return "emerging"
         else:
             return "developing"
+=======
+            "developer": plugin_data["developer"]
+        }
+        self.plugins.append(plugin)
+        return plugin
+>>>>>>> db7bc0e26d01433233b05f14b13fb73dbca52f97
 
 marketplace = CommunityMarketplace()

@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import requests
 import json
 from datetime import datetime
@@ -53,3 +54,13 @@ if __name__ == "__main__":
     analyzer = MarketAnalyzer()
     trends = analyzer.get_github_trends()
     print("Market analysis completed!")
+=======
+class MarketAnalyzer:
+    def __init__(self):
+        self.trends = {}
+    
+    def get_github_trends(self):
+        return {"languages": ["Python", "JavaScript"], "trending": True}
+
+market_analyzer = MarketAnalyzer()
+>>>>>>> db7bc0e26d01433233b05f14b13fb73dbca52f97

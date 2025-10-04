@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import json
 import asyncio
 import time
@@ -116,3 +117,13 @@ class CollaborationAdapter:
             return "developing"
 
 collaboration_adapter = CollaborationAdapter()
+=======
+class CollaborationAdapter:
+    def __init__(self):
+        self.active_sessions = {}
+    
+    def create_collaboration_session(self, session_id, owner):
+        return {"session_id": session_id}
+
+collaboration_adapter = CollaborationAdapter()
+>>>>>>> db7bc0e26d01433233b05f14b13fb73dbca52f97

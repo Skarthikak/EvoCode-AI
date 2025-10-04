@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import json
 import time
 from datetime import datetime
@@ -164,3 +165,13 @@ class MLTrainingPipeline:
         return recommendations
 
 ml_pipeline = MLTrainingPipeline()
+=======
+class MLTrainingPipeline:
+    def __init__(self):
+        self.training_jobs = []
+    
+    def create_training_job(self, job_type):
+        return {"job_id": "job_1"}
+
+ml_pipeline = MLTrainingPipeline()
+>>>>>>> db7bc0e26d01433233b05f14b13fb73dbca52f97

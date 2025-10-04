@@ -1,13 +1,17 @@
+<<<<<<< HEAD
 import time
 import psutil
 import json
 from datetime import datetime
 
+=======
+>>>>>>> db7bc0e26d01433233b05f14b13fb73dbca52f97
 class PerformanceMonitor:
     def __init__(self):
         self.metrics_history = []
     
     def collect_system_metrics(self):
+<<<<<<< HEAD
         metrics = {
             "timestamp": datetime.now().isoformat(),
             "cpu_percent": psutil.cpu_percent(interval=1),
@@ -85,3 +89,8 @@ if __name__ == "__main__":
     monitor = PerformanceMonitor()
     report = monitor.generate_performance_report()
     print(f"Performance Status: {report['health_assessment']['status']}")
+=======
+        return {"cpu_percent": 45, "memory_percent": 60}
+
+performance_monitor = PerformanceMonitor()
+>>>>>>> db7bc0e26d01433233b05f14b13fb73dbca52f97

@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import requests
 import json
 import os
@@ -44,3 +45,13 @@ if __name__ == "__main__":
     processor = TestimonialProcessor()
     processor.generate_testimonial_display()
     print("Testimonials processed!")
+=======
+class TestimonialProcessor:
+    def __init__(self):
+        self.testimonials = []
+    
+    def get_testimonials(self):
+        return [{"user": "user1", "feedback": "Great tool!"}]
+
+testimonial_processor = TestimonialProcessor()
+>>>>>>> db7bc0e26d01433233b05f14b13fb73dbca52f97

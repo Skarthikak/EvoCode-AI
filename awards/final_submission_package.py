@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import json
 from datetime import datetime
 
@@ -196,3 +197,13 @@ class AwardSubmissionPackage:
         }
 
 award_package = AwardSubmissionPackage()
+=======
+class AwardSubmissionPackage:
+    def __init__(self):
+        self.award_targets = {}
+    
+    def generate_submission_package(self):
+        return {"status": "ready"}
+
+award_package = AwardSubmissionPackage()
+>>>>>>> db7bc0e26d01433233b05f14b13fb73dbca52f97

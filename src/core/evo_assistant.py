@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import json
 import requests
 from datetime import datetime
@@ -42,3 +43,13 @@ class EvoCodeAssistant:
         return base_completions
 
 evo_assistant = EvoCodeAssistant()
+=======
+class EvoCodeAssistant:
+    def __init__(self):
+        self.version = "1.0.0"
+    
+    def code_completion(self, context, language):
+        return ["def ", "class ", "import "]
+
+evo_assistant = EvoCodeAssistant()
+>>>>>>> db7bc0e26d01433233b05f14b13fb73dbca52f97

@@ -1,48 +1,73 @@
 import json
+<<<<<<< HEAD
 from datetime import datetime, timedelta
 from collections import Counter
+=======
+from datetime import datetime
+>>>>>>> db7bc0e26d01433233b05f14b13fb73dbca52f97
 
 class AnalyticsDashboard:
     def __init__(self):
         self.metrics_history = []
+<<<<<<< HEAD
         self.user_behavior_data = []
     
     def collect_comprehensive_metrics(self):
         """Collect all metrics for the dashboard"""
+=======
+    
+    def collect_comprehensive_metrics(self):
+>>>>>>> db7bc0e26d01433233b05f14b13fb73dbca52f97
         metrics = {
             "timestamp": datetime.now().isoformat(),
             "user_metrics": self.get_user_metrics(),
             "ai_metrics": self.get_ai_metrics(),
+<<<<<<< HEAD
             "community_metrics": self.get_community_metrics(),
             "evolution_metrics": self.get_evolution_metrics(),
             "business_metrics": self.get_business_metrics()
         }
         
         self.metrics_history.append(metrics)
+=======
+            "community_metrics": self.get_community_metrics()
+        }
+>>>>>>> db7bc0e26d01433233b05f14b13fb73dbca52f97
         return metrics
     
     def get_user_metrics(self):
         return {
+<<<<<<< HEAD
             "active_users": self.calculate_active_users(),
             "new_users_today": self.calculate_new_users(),
             "user_retention_rate": self.calculate_retention_rate(),
             "session_duration_avg": "45min",
             "feature_adoption_rate": 0.75
+=======
+            "active_users": 1247,
+            "new_users_today": 23,
+            "user_retention_rate": 0.82
+>>>>>>> db7bc0e26d01433233b05f14b13fb73dbca52f97
         }
     
     def get_ai_metrics(self):
         return {
             "model_accuracy": 0.87,
             "suggestion_acceptance_rate": 0.68,
+<<<<<<< HEAD
             "learning_progress": 0.92,
             "training_data_size": "15.2GB",
             "inference_speed": "125ms"
+=======
+            "learning_progress": 0.92
+>>>>>>> db7bc0e26d01433233b05f14b13fb73dbca52f97
         }
     
     def get_community_metrics(self):
         return {
             "total_contributors": 42,
             "community_growth_rate": 0.15,
+<<<<<<< HEAD
             "engagement_score": 8.7,
             "testimonials_count": 28,
             "evolution_votes": 156
@@ -168,5 +193,19 @@ class AnalyticsDashboard:
             json.dump(report, f, indent=2)
         
         return report
+=======
+            "testimonials_count": 28
+        }
+    
+    def generate_dashboard_data(self):
+        metrics = self.collect_comprehensive_metrics()
+        return {
+            "summary": {
+                "overall_health": "excellent",
+                "performance_score": 9.2
+            },
+            "metrics": metrics
+        }
+>>>>>>> db7bc0e26d01433233b05f14b13fb73dbca52f97
 
 analytics_dashboard = AnalyticsDashboard()

@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import time
 from datetime import datetime, timedelta
 
@@ -69,3 +70,13 @@ class SecurityManager:
             return "low"
 
 security_manager = SecurityManager()
+=======
+class SecurityManager:
+    def __init__(self):
+        self.api_keys = {}
+    
+    def validate_api_key(self, api_key):
+        return True
+
+security_manager = SecurityManager()
+>>>>>>> db7bc0e26d01433233b05f14b13fb73dbca52f97

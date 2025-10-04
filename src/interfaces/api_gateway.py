@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 from flask import Flask, request, jsonify
 import json
 from datetime import datetime
@@ -102,3 +103,13 @@ api_gateway = APIGateway()
 
 if __name__ == '__main__':
     api_gateway.run(debug=True)
+=======
+class APIGateway:
+    def __init__(self):
+        self.request_log = []
+    
+    def handle_code_completion(self, data):
+        return {"suggestions": ["def ", "class "]}
+
+api_gateway = APIGateway()
+>>>>>>> db7bc0e26d01433233b05f14b13fb73dbca52f97
