@@ -26,6 +26,7 @@ cd EvoCode-AI
 
 # Run verification tests
 python final_working_test.py
+```
 # EvoCode-AI 🤖
 
 A self-evolving AI development environment that automates and enhances the software development lifecycle through intelligent code generation, testing, and optimization.
@@ -51,6 +52,7 @@ A self-evolving AI development environment that automates and enhances the softw
 # Clone the repository
 git clone https://github.com/Skarthikak/EvoCode-AI.git
 cd EvoCode-AI
+```
 
 # Run verification tests
 python final_working_test.py
